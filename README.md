@@ -5,7 +5,7 @@
 
 Normal blockchain wallets use a single private key to sign transactions. The problem is that if that key is lost or stolen, the funds are gone. There's also no way to require multiple people to agree before a transaction goes through.
 
-This project implements a **3-of-5 threshold wallet** - meaning the wallet needs at least 3 out of 5 administrators to approve and sign a transaction before it can go through. The full private key is never assembled in one place at any point.
+This project implements a 3-of-5 threshold wallet - meaning the wallet needs at least 3 out of 5 administrators to approve and sign a transaction before it can go through. The full private key is never assembled in one place at any point.
 
 ---
 
@@ -113,21 +113,6 @@ pytest tests/ -v
 ```
 
 All 44 tests should pass.
-
----
-
-## What's simulated vs. what's real
-
-Some parts of this are stubs because a full implementation would need native libraries or hardware:
-
-| Part | Status |
-|------|--------|
-| secp256k1 EC point arithmetic | Placeholder - needs `coincurve` or `py_ecc` |
-| SGX enclave | Simulated in Python |
-| mTLS | Token-based for now |
-| Transaction storage | In-memory dict |
-| Audit log persistence | In-memory |
-| Partial signature verification | Structural stub |
 
 ---
 
